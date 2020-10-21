@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = \App\Models\Post::all();
+    return view('welcome', ['posts' => $posts]);
 });
